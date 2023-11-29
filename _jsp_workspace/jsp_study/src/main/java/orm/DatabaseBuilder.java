@@ -7,7 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 public class DatabaseBuilder {
 
 	private static SqlSessionFactory factory;
-	private static final String CONFIG = "orm/MybatisConfig.xml";
+	private static final String CONFIG = "orm/MyBatisConfig.xml";
 	
 	//초기화 블럭을 사용하여 객체 생성 후 초기화
 	static {

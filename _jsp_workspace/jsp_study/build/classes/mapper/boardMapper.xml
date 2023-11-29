@@ -7,7 +7,29 @@
 	<!-- sql 구분별 생성 id를 통해 구문을 구분 daoimpl()의 메서드와 연결 -->
 	<!-- daoimpl() namespace.id -->
 	<!-- parameterType=매개변수 객체, resultType = 결과로 나가는 객체 -->
-	<select id="">
-		select * from board
+	<insert id="add" parameterType="bvo">
+	insert into board(title, writer, content)
+	values(#{title}, #{writer}, #{content})
+	</insert>
+	
+	<select id="list" resultType="bvo">
+	select * from board order by bno desc
 	</select>
+	
+	<update id="read" parameterType="int">
+	update board set readcount = readcount+1 where bno = #{bno}
+	</update>
+	
+	<select id="detail" parameterType="int" resultType="bvo">
+	select * from board where bno = #{bno}
+	</select>
+	
+	<update id="up" parameterType="bvo">
+	update board set title = #{title}, content = #{content}, moddate=now()
+	where bno = #{bno}
+	</update>
+	
+	<delete id="del" parameterType="int">
+	delete from board where bno = #{bno}
+	</delete>
 </mapper>
