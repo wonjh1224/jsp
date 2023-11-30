@@ -34,4 +34,8 @@
 	delete from board where bno=#{bno}
 	</delete>
 	
+	<select id="my" parameterType="string" resultType="bvo">
+	select * from board where writer = #{id}
+	</select>
+	
 </mapper>

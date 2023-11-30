@@ -9,11 +9,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import domain.BoardVO;
+import domain.MemberVO;
 import service.BoardService;
 import service.BoardServiceImpl;
 
@@ -148,6 +150,24 @@ public class BoardController extends HttpServlet {
 				log.info("remove error");
 				e.printStackTrace();
 			}
+			break;
+		case "myBoard":
+			try {
+				
+				HttpSession ses = request.getSession();
+				
+				MemberVO mvo = (MemberVO)ses.getAttribute("ses");
+				
+				List<BoardVO> bvo = bsv.myBoard(mvo.getId());
+				request.setAttribute("list", bvo);
+				
+				destpage="/member/mylist.jsp";
+				
+			} catch (Exception e) {
+				log.info("myBoard Error");
+				e.printStackTrace();
+			}
+			break;
 			
 		}
 		

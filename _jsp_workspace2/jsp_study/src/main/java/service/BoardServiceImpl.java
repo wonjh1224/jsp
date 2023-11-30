@@ -49,4 +49,10 @@ public class BoardServiceImpl implements BoardService {
 		return bdao.delete(bno);
 	}
 
+	@Override
+	public List<BoardVO> myBoard(String id) {
+		log.info("myBoard check 2");
+		return bdao.myBoard(id);
+	}
+
 }
