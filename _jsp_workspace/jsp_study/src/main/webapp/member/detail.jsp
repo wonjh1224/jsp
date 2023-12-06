@@ -18,6 +18,7 @@ age: <input type="text" name="age" value="${session.age }"><br>
 </form>
 <a href="/memb/remove">
 <button>회원탈퇴</button>
+
 </a>
 </body>
 </html>
