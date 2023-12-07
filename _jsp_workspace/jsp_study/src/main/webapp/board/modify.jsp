@@ -8,8 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Detail Page</h1>
-	<form action="/brd/edit" method="post">
+	<h1>Modify Page</h1>
+	<br>
+	<img alt="" src="/_fileUpload/${bvo.imageFile}">
+	<form action="/brd/edit" method="post" enctype="multipart/form-data">
 		<table border="1">
 			<tr>
 				<th>bno</th>
@@ -41,6 +43,13 @@
 				<th>content</th>
 				<td><textarea rows="10" cols="30" name="content">${bvo.content }</textarea>
 				</td>
+			</tr>
+			<tr>
+			<th>image_file</th>
+			<td>
+			<input type="hidden" name="image_file" value="${bvo.imageFile }">
+			<input type="file" name="new_file">
+			</td>
 			</tr>
 		</table>
 

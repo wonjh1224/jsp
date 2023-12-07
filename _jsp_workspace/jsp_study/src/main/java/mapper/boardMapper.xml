@@ -9,8 +9,8 @@
 	<!-- parameterType=매개변수 객체, resultType = 결과로 나가는 객체 -->
 	<insert id="add" parameterType="bvo">
 		insert into board(title, writer,
-		content)
-		values(#{title}, #{writer}, #{content})
+		content, imageFile)
+		values(#{title}, #{writer}, #{content}, #{imageFile})
 	</insert>
 
 	<select id="list" parameterType="pvo" resultType="bvo">
@@ -31,7 +31,7 @@
 
 	<update id="up" parameterType="bvo">
 		update board set title = #{title},
-		content = #{content}, moddate=now()
+		content = #{content}, moddate=now(), imageFile = #{imageFile}
 		where bno = #{bno}
 	</update>
 

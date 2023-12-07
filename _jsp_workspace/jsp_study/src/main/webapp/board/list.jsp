@@ -53,7 +53,7 @@
 				<c:forEach items="${list }" var="bvo">
 					<tr>
 						<td><a href="/brd/detail?bno=${bvo.bno}">${bvo.bno }</a></td>
-						<td><a href="/brd/detail?bno=${bvo.bno}">${bvo.title }</a></td>
+						<td><a href="/brd/detail?bno=${bvo.bno}"><img alt="" src="/_fileUpload/thum_${bvo.imageFile}">${bvo.title }</a></td>
 						<td>${bvo.writer }</td>
 						<td>${bvo.regdate }</td>
 						<td>${bvo.readCount }</td>
