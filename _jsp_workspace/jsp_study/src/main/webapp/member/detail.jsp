@@ -10,7 +10,7 @@
 <body>
 <h1>Detail Page</h1>
 <form action="/memb/modify" method="post">
-id: <input type="text" name="id" value="${session.id }" readonly="readonly"><br>
+id: <input type="text" name="id" value="    " readonly="readonly"><br>
 pw: <input type="text" name="pwd" value="${session.pwd }"><br>
 email: <input type="text" name="email" value="${session.email }"><br>
 age: <input type="text" name="age" value="${session.age }"><br>
@@ -18,7 +18,6 @@ age: <input type="text" name="age" value="${session.age }"><br>
 </form>
 <a href="/memb/remove">
 <button>회원탈퇴</button>
-
 </a>
 </body>
 </html>

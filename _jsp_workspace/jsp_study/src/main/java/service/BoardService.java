@@ -19,6 +19,8 @@ public interface BoardService {
 
 	int getCnt(PagingVO pvo);
 
+//	int removeCmt(int bno);
+
 	
 
 }

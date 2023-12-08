@@ -1,4 +1,4 @@
-package controller;
+	package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -96,7 +96,6 @@ public class MemberController extends HttpServlet {
 					HttpSession ses = request.getSession();
 					ses.setAttribute("session", loginMvo);
 					ses.setMaxInactiveInterval(3600); //로그인 유지시간(초단위)
-					isOk = msv.lastLogin(id);
 				}else {
 					//로그인 객체가 없다면
 					request.setAttribute("msg_login", -1);
@@ -119,6 +118,8 @@ public class MemberController extends HttpServlet {
 				log.info("ses에서 추출한 mvo >> {}"+mvo);
 				
 				//lastLogin update
+				isOk = msv.remove(mvo.getId());
+				log.info(isOk>0?"Ok":"fail");
 				ses.invalidate(); //세션 무효화 (세션 끊기)
 				destPage = "/index.jsp";
 				

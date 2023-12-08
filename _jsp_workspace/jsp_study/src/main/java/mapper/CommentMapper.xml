@@ -25,4 +25,6 @@
 	update comment set content = #{content} where cno=#{cno}
 	</update>
 	
+
+	
 </mapper>

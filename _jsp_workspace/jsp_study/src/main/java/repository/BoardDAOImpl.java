@@ -83,4 +83,12 @@ public class BoardDAOImpl implements BoardDAO {
 		log.info("getCnt check 3");
 		return sql.selectOne("BoardMapper.cnt", pvo);
 	}
+
+//	@Override
+//	public int removeCmt(int bno) {
+//		log.info("removeCmt check dao");
+//		int isOk = sql.delete("CommentMapper.delCmt",bno);
+//		if(isOk>0)sql.commit();
+//		return isOk;
+//	}
 }

@@ -21,4 +21,6 @@ public interface BoardDAO {
 
 	int getCnt(PagingVO pvo);
 
+//	int removeCmt(int bno);
+
 }

@@ -2,10 +2,11 @@ package service;
 
 import java.util.List;
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.mysql.cj.log.LogFactory;
+
 
 import domain.CommentVO;
 import repository.CommentDAO;
@@ -35,6 +36,7 @@ public class CommentServiceImpl implements CommentService {
 	@Override
 	public int remove(int cno) {
 		log.info("remove check service");
+		//지우기 전에 댓글 삭제 후 글 지우기
 		return cdao.delete(cno);
 	}
 
@@ -42,5 +44,10 @@ public class CommentServiceImpl implements CommentService {
 	public int modify(CommentVO cvo) {
 		log.info("modify check service");
 		return cdao.update(cvo);
+	}
+
+	public int removeAll(int bno) {
+		// TODO Auto-generated method stub
+		return cdao.removeAll(bno);
 	}
 }

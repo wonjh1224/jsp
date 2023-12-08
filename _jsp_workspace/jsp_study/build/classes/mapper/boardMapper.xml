@@ -39,11 +39,18 @@
 		delete from board where bno =
 		#{bno}
 	</delete>
+	
+		<delete id="delAll" parameterType="int">
+		delete from comment where bno =
+		#{bno}
+	</delete>
 
 	<select id="cnt" parameterType="pvo" resultType="int">
 		select count(bno) from board
 		<include refid="search"></include>
 	</select>
+	
+
 
 	<sql id="search">
 		<if test="type != null">
